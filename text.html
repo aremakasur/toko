@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Arema Kasur menyediakan kasur busa, springbed, divan laci, lemari besi, dan aksesoris tidur untuk Malang Raya." />
+  <meta name="description" content="Arema Kasur — kasur premium, springbed, divan laci, lemari besi, dan aksesoris tidur untuk Malang Raya." />
   <title>Arema Kasur | Premium Sleep Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,13 +66,19 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 60;
       backdrop-filter: blur(18px);
       background: rgba(255,255,255,0.74);
       border-bottom: 1px solid var(--line);
     }
 
-    .nav { display: flex; align-items: center; gap: 26px; padding: 16px 0; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      padding: 16px 0;
+      position: relative;
+    }
 
     .logo {
       font-size: 22px;
@@ -168,6 +174,17 @@
       margin-left: auto;
     }
 
+    .mobile-menu {
+      display: none;
+      padding: 0 22px 18px;
+      gap: 10px;
+      flex-direction: column;
+      color: #235168;
+      font-weight: 700;
+    }
+
+    .mobile-menu.visible { display: flex; }
+
     .hero {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
@@ -251,7 +268,7 @@
 
     .visual {
       position: relative;
-      min-height: 450px;
+      min-height: 470px;
       display: grid;
       place-items: center;
     }
@@ -599,6 +616,105 @@
       min-height: 20px;
     }
 
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .quote-card {
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: 0 12px 26px rgba(8,89,133,0.05);
+    }
+
+    .quote-mark {
+      font-size: 42px;
+      color: var(--electric-blue);
+      line-height: 1;
+      margin-bottom: 10px;
+      font-family: serif;
+    }
+
+    .quote-card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .customer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #bfdbfe, #a5f3fc);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .customer strong { display: block; font-size: 13px; }
+    .customer span { font-size: 11px; color: var(--muted); }
+
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 0 18px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      padding: 18px 0;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: left;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 180px;
+      padding-bottom: 16px;
+    }
+
+    .faq-item.active .faq-question span:last-child { transform: rotate(45deg); }
+
+    .faq-question span:last-child {
+      transition: transform 0.2s ease;
+      font-size: 22px;
+      color: var(--electric-blue);
+    }
+
     footer {
       background: #062d46;
       color: #dff5ff;
@@ -648,6 +764,7 @@
       color: #fff;
       font-size: 28px;
       box-shadow: 0 14px 24px rgba(37,211,102,0.34);
+      z-index: 50;
     }
 
     .hidden { display: none !important; }
@@ -660,7 +777,7 @@
       .hero { grid-template-columns: 1fr; }
       .catalog-grid { grid-template-columns: 1fr; }
       .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .verify-wrap { grid-template-columns: 1fr; }
+      .verify-wrap, .faq-wrap, .testimonial-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -712,6 +829,12 @@
 
       <button class="menu-toggle" aria-label="Menu">☰</button>
     </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#produk">Katalog</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#garansi">Cek Garansi</a>
+      <a href="https://wa.me/6288989684438" target="_blank">WhatsApp</a>
+    </div>
   </header>
 
   <main id="top">
@@ -738,6 +861,57 @@
         <div class="floating-chip chip-left"><strong>20</strong> <span>tahun<br />garansi</span></div>
         <div class="mattress-scene"></div>
         <div class="floating-chip chip-right"><strong>✓</strong> <span>High Density<br />Foam</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Bestseller</span>
+            <h2>Promo unggulan saat ini</h2>
+          </div>
+        </div>
+
+        <div class="slider" id="heroSlider" style=" position: relative; background: rgba(255,255,255,0.56); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; box-shadow: 0 16px 36px rgba(14,116,144,0.08);">
+          <div class="slides" style="display: flex; transition: transform 0.5s ease;">
+            <div class="slide" style="min-width: 100%; padding: 40px 36px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; background: linear-gradient(120deg, rgba(224,242,254,0.75), rgba(255,255,255,0.5));">
+              <div>
+                <span class="badge" style="margin-bottom: 12px;">Diskon Spesial</span>
+                <h3 style="margin:0 0 10px; font-size: clamp(26px, 3vw, 42px); letter-spacing: -0.04em;">Arema Nebula Series</h3>
+                <p style="margin:0 0 18px; color: var(--muted); line-height: 1.7; max-width: 480px;">Dapatkan kasur premium dengan teknologi Sanitized Foam dan garansi 20 tahun untuk kualitas tidur yang lebih sehat dan lebih tenang.</p>
+                <a href="#produk" class="btn btn-primary">Cek Promo</a>
+              </div>
+              <div style="display:grid; place-items:center; font-size: 120px;">🛏️</div>
+            </div>
+
+            <div class="slide" style="min-width: 100%; padding: 40px 36px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; background: linear-gradient(120deg, rgba(236,254,255,0.8), rgba(255,255,255,0.5));">
+              <div>
+                <span class="badge" style="margin-bottom: 12px;">Gratis Ongkir</span>
+                <h3 style="margin:0 0 10px; font-size: clamp(26px, 3vw, 42px); letter-spacing: -0.04em;">Springbed Premium untuk Keluarga</h3>
+                <p style="margin:0 0 18px; color: var(--muted); line-height: 1.7; max-width: 480px;">Nikmati kenyamanan springbed dengan struktur dukung tubuh optimal, cocok untuk keluarga yang mengutamakan kualitas tidur.</p>
+                <a href="#produk" class="btn btn-primary">Lihat Detail</a>
+              </div>
+              <div style="display:grid; place-items:center; font-size: 120px;">🛌</div>
+            </div>
+
+            <div class="slide" style="min-width: 100%; padding: 40px 36px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; background: linear-gradient(120deg, rgba(224,242,254,0.75), rgba(239,254,255,0.7));">
+              <div>
+                <span class="badge" style="margin-bottom: 12px;">Produk Baru</span>
+                <h3 style="margin:0 0 10px; font-size: clamp(26px, 3vw, 42px); letter-spacing: -0.04em;">Divan &amp; Aksesoris Tidur</h3>
+                <p style="margin:0 0 18px; color: var(--muted); line-height: 1.7; max-width: 480px;">Tingkatkan estetika kamar tidur Anda dengan divan laci, lemari besi, dan aksesoris premium yang praktis dan modern.</p>
+                <a href="#produk" class="btn btn-primary">Belanja Sekarang</a>
+              </div>
+              <div style="display:grid; place-items:center; font-size: 120px;">🧺</div>
+            </div>
+          </div>
+
+          <div style="position: absolute; right: 20px; bottom: 20px; display: flex; gap: 8px; z-index: 2;">
+            <button class="slider-dot active" data-slide="0" style="width: 12px; height: 12px; border: 0; border-radius: 50%; background: #0ea5e9; cursor: pointer; opacity: 1;"></button>
+            <button class="slider-dot" data-slide="1" style="width: 12px; height: 12px; border: 0; border-radius: 50%; background: rgba(14,165,233,0.35); cursor: pointer;"></button>
+            <button class="slider-dot" data-slide="2" style="width: 12px; height: 12px; border: 0; border-radius: 50%; background: rgba(14,165,233,0.35); cursor: pointer;"></button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -908,6 +1082,79 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Apa kata pelanggan</span>
+            <h2>Testimoni pembeli</h2>
+          </div>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>Kasurnya nyaman banget dan terasa premium. Bawaannya langsung sejuk dan empuk, cocok untuk keluarga saya di Malang.</p>
+            <div class="customer">
+              <div class="avatar">A</div>
+              <div><strong>Ayu M.</strong><span>Rumah Tangga</span></div>
+            </div>
+          </article>
+
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>Harga sesuai kualitas. Proses pengiriman cepat, dan garansi nya jelas. Sudah jadi pilihan utama untuk kamar tidur anak.</p>
+            <div class="customer">
+              <div class="avatar">R</div>
+              <div><strong>Rizky P.</strong><span>Owner Kos</span></div>
+            </div>
+          </article>
+
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>Saya suka desain furniture dan kualitas busa-nya. Produk yang dibeli terasa tahan lama dan membantu tidur lebih nyenyak.</p>
+            <div class="customer">
+              <div class="avatar">S</div>
+              <div><strong>Santi T.</strong><span>Pengusaha</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>Pertanyaan umum</h2>
+          </div>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item active">
+            <button class="faq-question" type="button"><span>Apakah Arema Kasur menyediakan pengiriman ke Malang Raya?</span><span>+</span></button>
+            <div class="faq-answer"><p>Ya, Arema Kasur melayani pengiriman ke Malang Raya dan sekitarnya dengan biaya ongkir gratis sesuai promo aktif.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button"><span>Bagaimana cara mengecek garansi produk?</span><span>+</span></button>
+            <div class="faq-answer"><p>Anda dapat melacak nomor seri produk melalui form validasi garansi di halaman ini untuk memastikan keaslian dan masa berlaku produk.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button"><span>Apakah tersedia produk untuk kamar ukuran queen/king?</span><span>+</span></button>
+            <div class="faq-answer"><p>Ya, tersedia pilihan ukuran 160x200, 180x200, hingga 200x200 dengan berbagai level kekerasan sesuai kebutuhan.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button"><span>Apakah bisa konsultasi sebelum beli?</span><span>+</span></button>
+            <div class="faq-answer"><p>Tentu, tim Arema Kasur siap membantu proses konsultasi dan rekomendasi produk terbaik melalui WhatsApp atau kunjungan showroom.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="garansi" class="section">
       <div class="wrap">
         <div class="verify-wrap">
@@ -979,6 +1226,45 @@
         return;
       }
       result.textContent = `Nomor seri ${serial.toUpperCase()} berhasil diverifikasi dan aktif dalam sistem garansi Arema Kasur.`;
+    });
+
+    const heroSlides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+
+    function renderSlide(index) {
+      const track = document.querySelector('.slides');
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, idx) => {
+        const active = idx === index;
+        dot.style.opacity = active ? '1' : '0.35';
+        dot.style.background = active ? '#0ea5e9' : 'rgba(14,165,233,0.35)';
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        currentSlide = Number(dot.dataset.slide);
+        renderSlide(currentSlide);
+      });
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      renderSlide(currentSlide);
+    }, 4200);
+
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('visible');
+    });
+
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        const open = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach((faq) => faq.classList.remove('active'));
+        if (!open) item.classList.add('active');
+      });
     });
   </script>
 </body>
