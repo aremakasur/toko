@@ -3,120 +3,983 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Arema Kasur — kasur busa, springbed, divan, lemari besi, dan aksesoris tidur berkualitas untuk Malang Raya." />
-  <title>Arema Kasur — Tidur Lebih Nyaman, Setiap Malam</title>
+  <meta name="description" content="Arema Kasur menyediakan kasur busa, springbed, divan laci, lemari besi, dan aksesoris tidur untuk Malang Raya." />
+  <title>Arema Kasur | Premium Sleep Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #082f49;
-      --muted: #527086;
+      --bg-1: #e0f2fe;
+      --bg-2: #f0f9ff;
+      --bg-3: #ecfeff;
       --cyan-light: #e0f2fe;
       --cyan-main: #06b6d4;
       --electric-blue: #0ea5e9;
       --deep-blue: #075985;
-      --glass: rgba(255,255,255,.72);
-      --line: rgba(14,165,233,.16);
-      --shadow: 0 18px 50px rgba(14, 116, 144, .12);
-      --radius: 24px;
+      --ink: #0f172a;
+      --muted: #557389;
+      --glass: rgba(255,255,255,0.72);
+      --line: rgba(14,165,233,0.16);
+      --shadow: 0 18px 45px rgba(12, 74, 110, 0.12);
+      --radius: 26px;
+      --white: #ffffff;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); font: 15px/1.6 Inter, sans-serif; background: linear-gradient(135deg,#e0f2fe 0%,#f0f9ff 48%,#ecfeff 100%); }
-    h1,h2,h3,.logo { font-family: Outfit, sans-serif; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
+    }
+
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
     button, input, select { font: inherit; }
-    .announcement { background: var(--electric-blue); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .04em; overflow: hidden; white-space: nowrap; }
-    .announcement div { padding: 8px 0; animation: ticker 22s linear infinite; }
-    @keyframes ticker { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
-    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.78); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
-    .nav { max-width: 1180px; margin: auto; padding: 17px 22px; display: flex; align-items: center; gap: 28px; }
-    .logo { font-size: 21px; line-height: 1; font-weight: 800; letter-spacing: .03em; white-space: nowrap; }
+    h1,h2,h3,.logo,.brand { font-family: 'Outfit', sans-serif; }
+
+    .announcement {
+      background: linear-gradient(90deg, #0ea5e9, #0284c7);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      overflow: hidden;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .announcement-track {
+      padding: 10px 0;
+      white-space: nowrap;
+      animation: ticker 18s linear infinite;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,0.74);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav { display: flex; align-items: center; gap: 26px; padding: 16px 0; }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
     .logo span { color: var(--electric-blue); }
-    .search { position: relative; flex: 1; max-width: 470px; }
-    .search input { width: 100%; border: 1px solid var(--line); background: rgba(240,249,255,.8); border-radius: 14px; padding: 12px 16px 12px 42px; outline: 0; color: var(--ink); }
-    .search input:focus { border-color: var(--cyan-main); box-shadow: 0 0 0 4px rgba(34,211,238,.14); }
-    .search-icon { position: absolute; left: 15px; top: 10px; font-size: 20px; color: var(--muted); }
-    nav { display: flex; gap: 19px; align-items: center; margin-left: auto; color: #24516b; font-size: 13px; font-weight: 600; }
-    nav a:hover { color: var(--electric-blue); }
-    .menu { display: none; border: 0; background: none; font-size: 22px; }
-    .wrap { max-width: 1180px; margin: auto; padding: 0 22px; }
-    .hero { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 45px; min-height: 535px; padding-top: 55px; }
-    .eyebrow, .badge { display: inline-flex; align-items: center; gap: 7px; border-radius: 99px; padding: 7px 13px; background: rgba(34,211,238,.14); color: #08728b; font-weight: 700; font-size: 12px; }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 470px;
+    }
+
+    .search-wrap input {
+      width: 100%;
+      padding: 12px 18px 12px 44px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(240,249,255,0.8);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .search-wrap input:focus {
+      border-color: rgba(6,182,212,0.7);
+      box-shadow: 0 0 0 4px rgba(34,211,238,0.12);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 10px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-left: auto;
+      color: #25536f;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover { color: var(--electric-blue); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      border-radius: 14px;
+      padding: 13px 22px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan-main), var(--electric-blue));
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(14,165,233,0.26);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 35px rgba(14,165,233,0.33);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.62);
+      color: var(--deep-blue);
+      border: 1px solid rgba(14,165,233,0.22);
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      border-color: rgba(34,211,238,0.52);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 46px;
+      align-items: center;
+      min-height: 560px;
+      padding: 52px 0 38px;
+    }
+
+    .eyebrow, .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(34,211,238,0.13);
+      color: #0b6794;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     .eyebrow::before { content: '✦'; color: var(--cyan-main); }
-    h1 { font-size: clamp(40px,5.2vw,69px); letter-spacing: -.055em; line-height: 1.02; margin: 18px 0; max-width: 660px; }
-    .gradient-text { background: linear-gradient(110deg,#075985,#0ea5e9 58%,#06b6d4); -webkit-background-clip: text; color: transparent; }
-    .hero-copy { color: var(--muted); font-size: 17px; max-width: 535px; }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 27px 0; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 13px; padding: 13px 20px; cursor: pointer; font-weight: 700; transition: .25s ease; }
-    .btn-primary { color: #fff; background: linear-gradient(135deg,var(--cyan-main),var(--electric-blue)); box-shadow: 0 9px 22px rgba(14,165,233,.27); }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(14,165,233,.38); }
-    .btn-outline { color: var(--deep-blue); border: 1px solid rgba(14,165,233,.28); background: rgba(255,255,255,.65); }
-    .btn-outline:hover { border-color: var(--cyan-main); background: #fff; }
-    .trust { display: flex; gap: 24px; color: #3f687c; font-size: 12px; font-weight: 600; }
-    .trust strong { display: block; color: var(--ink); font-size: 15px; }
-    .hero-art { position: relative; min-height: 430px; display: grid; place-items: center; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(1px); }
-    .orb.one { width: 310px; height: 310px; background: rgba(34,211,238,.25); top: 20px; right: 25px; }
-    .orb.two { width: 170px; height: 170px; background: rgba(14,165,233,.18); bottom: 15px; left: 30px; }
-    .mattress { position: relative; width: min(420px,88%); height: 235px; border-radius: 28px 28px 48px 48px; transform: rotate(-8deg); background: linear-gradient(150deg,#fff 0 20%,#d8f8fc 20% 52%,#8fd9e9 52% 100%); box-shadow: 20px 30px 0 rgba(7,89,133,.11), 0 24px 45px rgba(14,116,144,.25); }
-    .mattress::before { content: ''; position: absolute; width: 93%; height: 75px; top: -42px; left: 13px; border-radius: 24px 24px 12px 12px; transform: skewX(-18deg); background: linear-gradient(130deg,#fff,#e4fbff); box-shadow: inset 0 -8px 18px rgba(14,165,233,.1); }
-    .mattress::after { content: 'AREMA'; position: absolute; right: 28px; bottom: 33px; font: 700 15px Outfit; letter-spacing: .2em; color: rgba(7,89,133,.36); }
-    .floating-card { position: absolute; z-index: 1; display: flex; gap: 10px; align-items: center; padding: 12px 15px; border: 1px solid rgba(255,255,255,.8); border-radius: 15px; background: var(--glass); backdrop-filter: blur(12px); box-shadow: var(--shadow); font-size: 12px; font-weight: 700; }
-    .floating-card b { font-size: 22px; color: var(--electric-blue); }
-    .card-a { top: 45px; left: 8px; }.card-b { right: 0; bottom: 58px; }
-    section { padding: 72px 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 25px; }
-    .section-head h2 { margin: 6px 0 0; font-size: 34px; letter-spacing: -.035em; }
-    .section-head p { max-width: 440px; color: var(--muted); margin: 0; }
-    .categories { display: flex; gap: 11px; overflow-x: auto; padding-bottom: 5px; }
-    .category { min-width: 145px; padding: 19px 16px; text-align: center; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.58); transition: .2s; }
-    .category:hover { transform: translateY(-4px); background: #fff; border-color: rgba(6,182,212,.45); }
-    .category .emoji { display: block; font-size: 28px; margin-bottom: 7px; }
-    .category strong { font-size: 13px; }
-    .catalog-shell { display: grid; grid-template-columns: 215px 1fr; gap: 28px; }
-    .filters { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.58); height: fit-content; }
-    .filters h3 { margin: 0 0 18px; font-size: 19px; }.filter-group { border-top: 1px solid var(--line); padding: 16px 0 3px; }.filter-group:first-of-type { border-top: 0; padding-top: 0; }
-    .filter-group label { display: block; color: var(--muted); font-size: 13px; margin: 9px 0; cursor: pointer; }.filter-group input { accent-color: var(--electric-blue); margin-right: 7px; }
-    .products { display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; }
-    .product { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.73); box-shadow: 0 9px 25px rgba(14,116,144,.07); transition: .25s; }.product:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-    .product-image { height: 155px; display: grid; place-items: center; position: relative; background: linear-gradient(145deg,#effcff,#c9f5fa); font-size: 68px; }.product-image small { position: absolute; top: 12px; left: 12px; padding: 5px 9px; border-radius: 99px; background: #fff; color: var(--electric-blue); font-size: 10px; font-weight: 700; }
-    .product-info { padding: 16px; }.product-info h3 { margin: 0 0 5px; font-size: 18px; }.product-info p { margin: 0 0 12px; color: var(--muted); font-size: 12px; }.price { display: flex; justify-content: space-between; align-items: center; color: var(--deep-blue); font-weight: 800; }.price small { color: #5f8192; font-weight: 500; }
-    .compare { border-radius: var(--radius); padding: 28px; background: rgba(255,255,255,.65); border: 1px solid var(--line); overflow-x: auto; }.compare table { width: 100%; border-collapse: collapse; min-width: 650px; }.compare th,.compare td { text-align: left; padding: 15px 13px; border-bottom: 1px solid var(--line); }.compare th { color: var(--deep-blue); font: 700 14px Outfit; }.compare td { color: var(--muted); font-size: 13px; }.compare td:first-child { color: var(--ink); font-weight: 700; }
-    .verify { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; border-radius: 30px; padding: 36px; background: linear-gradient(120deg,#075985,#0e7490); color: #fff; box-shadow: 0 20px 45px rgba(7,89,133,.2); }.verify h2 { margin: 0 0 10px; font-size: 32px; }.verify p { color: #c8f4fa; }.verify form { padding: 8px; display: flex; gap: 8px; border-radius: 15px; background: rgba(255,255,255,.14); }.verify input { min-width: 0; flex: 1; padding: 12px; border: 0; outline: 0; border-radius: 10px; background: rgba(255,255,255,.9); }.verify .btn { background: #22d3ee; color: #073f5c; }
-    footer { margin-top: 70px; padding: 40px 0; color: #c7e9f2; background: #062f49; }.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 35px; }.footer-grid h3 { color: #fff; margin-top: 0; }.footer-grid p,.footer-grid a { color: #a7d2df; font-size: 13px; }.footer-grid a { display: block; margin: 8px 0; }.copyright { border-top: 1px solid rgba(255,255,255,.12); margin-top: 25px; padding-top: 18px; font-size: 11px; color: #8eb9c8; }
-    .wa { position: fixed; right: 22px; bottom: 22px; z-index: 20; display: grid; place-items: center; width: 57px; height: 57px; border-radius: 50%; background: #25d366; color: #fff; font-size: 28px; box-shadow: 0 9px 25px rgba(37,211,102,.35); }.wa:hover { transform: scale(1.08); }
-    @media (max-width: 800px) { .nav { gap: 13px; }.search { order: 3; flex-basis: 100%; max-width: none; } .nav { flex-wrap: wrap; } nav { display: none; }.menu { display: block; margin-left: auto; }.hero { grid-template-columns: 1fr; padding-top: 35px; }.hero-art { min-height: 350px; }.catalog-shell,.verify { grid-template-columns: 1fr; }.products { grid-template-columns: repeat(2,1fr); }.footer-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 480px) { .wrap { padding: 0 16px; } h1 { font-size: 42px; }.section-head { display: block; }.section-head h2 { font-size: 29px; }.products { grid-template-columns: 1fr; }.hero-art { transform: scale(.86); margin: -20px -20px; }.trust { gap: 14px; }.verify { padding: 25px 20px; }.verify form { flex-direction: column; background: none; padding: 0; }.verify .btn { width: 100%; }.footer-grid { grid-template-columns: 1fr; } }
+
+    h1 {
+      font-size: clamp(40px, 5vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin: 18px 0 18px;
+      max-width: 640px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #075985, #0ea5e9 58%, #06b6d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      color: #345a73;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.38);
+      border: 1px solid rgba(14,165,233,0.12);
+      border-radius: 14px;
+      padding: 10px 14px;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .visual {
+      position: relative;
+      min-height: 450px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(1px);
+      opacity: 0.9;
+    }
+
+    .orb.one {
+      width: 330px;
+      height: 330px;
+      background: rgba(34,211,238,0.22);
+      right: 24px;
+      top: 18px;
+    }
+
+    .orb.two {
+      width: 180px;
+      height: 180px;
+      background: rgba(14,165,233,0.18);
+      left: 30px;
+      bottom: 28px;
+    }
+
+    .mattress-scene {
+      position: relative;
+      width: min(430px, 90%);
+      height: 250px;
+      transform: rotate(-7deg);
+      border-radius: 30px 30px 52px 52px;
+      background: linear-gradient(145deg, #ffffff 0%, #effcff 25%, #d9f8fd 38%, #a9e6f3 71%, #8ad7ea 100%);
+      box-shadow: 20px 28px 0 rgba(8, 89, 133, 0.08), 0 30px 48px rgba(14,116,144,0.22);
+    }
+
+    .mattress-scene::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      right: 16px;
+      top: -48px;
+      height: 84px;
+      transform: skewX(-18deg);
+      border-radius: 20px 20px 12px 12px;
+      background: linear-gradient(135deg, #ffffff, #e5fbff);
+      box-shadow: inset 0 -9px 16px rgba(14,165,233,0.08);
+    }
+
+    .mattress-scene::after {
+      content: 'AREMA';
+      position: absolute;
+      right: 26px;
+      bottom: 30px;
+      font: 800 15px 'Outfit';
+      letter-spacing: 0.22em;
+      color: rgba(7,89,133,0.34);
+    }
+
+    .floating-chip {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      z-index: 2;
+    }
+
+    .floating-chip strong {
+      font-size: 24px;
+      color: var(--electric-blue);
+    }
+
+    .chip-left { left: 0; top: 44px; }
+    .chip-right { right: 8px; bottom: 62px; }
+
+    .section { padding: 72px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .section-head h2 {
+      margin: 8px 0 0;
+      font-size: clamp(30px, 3vw, 40px);
+      letter-spacing: -0.045em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 430px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .category-row {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      padding-bottom: 6px;
+    }
+
+    .category-card {
+      min-width: 150px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(34,211,238,0.55);
+      background: rgba(255,255,255,0.8);
+    }
+
+    .category-card .emoji {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 28px;
+    }
+
+    .filters {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      height: fit-content;
+    }
+
+    .filters h3 {
+      margin: 0 0 18px;
+      font-size: 22px;
+    }
+
+    .filter-group {
+      padding: 15px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .filter-group:first-of-type { border-top: 0; padding-top: 0; }
+
+    .filter-group b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .filter-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+      accent-color: var(--electric-blue);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(15, 118, 110, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-art {
+      position: relative;
+      height: 166px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #effcff, #cff8ff);
+      font-size: 68px;
+    }
+
+    .product-tag {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      background: #fff;
+      color: var(--electric-blue);
+      font-size: 10px;
+      font-weight: 800;
+      border-radius: 99px;
+      padding: 5px 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-body {
+      padding: 16px 16px 18px;
+    }
+
+    .product-body h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+    }
+
+    .product-body p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--deep-blue);
+      font-weight: 800;
+    }
+
+    .price-row small {
+      color: #5d8192;
+      font-weight: 600;
+    }
+
+    .compare-box {
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      padding: 18px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 15px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--deep-blue);
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    tr td:first-child {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .verify-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      background: linear-gradient(120deg, #075985, #0e7490 55%, #0891b2);
+      color: #fff;
+      border-radius: 32px;
+      padding: 34px 28px;
+      box-shadow: 0 22px 48px rgba(7,89,133,0.18);
+    }
+
+    .verify-wrap h2 {
+      margin: 12px 0 12px;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.1;
+    }
+
+    .verify-wrap p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.7;
+    }
+
+    .verify-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
+      margin-top: 22px;
+    }
+
+    .verify-form input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      outline: none;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.9);
+      color: var(--ink);
+    }
+
+    .verify-form .btn {
+      background: #22d3ee;
+      color: #073d58;
+      white-space: nowrap;
+    }
+
+    .verify-result {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.85);
+      min-height: 20px;
+    }
+
+    footer {
+      background: #062d46;
+      color: #dff5ff;
+      margin-top: 72px;
+      padding: 42px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-grid h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      margin: 8px 0;
+      font-size: 13px;
+      color: #bfe7f3;
+    }
+
+    .footer-grid a:hover { color: #fff; }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 24px;
+      padding-top: 18px;
+      font-size: 11px;
+      color: #9cc8d8;
+    }
+
+    .wa-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: #fff;
+      font-size: 28px;
+      box-shadow: 0 14px 24px rgba(37,211,102,0.34);
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 900px) {
+      .nav { flex-wrap: wrap; }
+      .search-wrap { order: 3; flex-basis: 100%; max-width: none; }
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .hero { grid-template-columns: 1fr; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .verify-wrap { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 0 16px; }
+      .section { padding: 56px 0; }
+      .section-head {
+        display: block;
+      }
+      .product-grid { grid-template-columns: 1fr; }
+      .verify-form {
+        flex-direction: column;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+      .verify-form input,
+      .verify-form .btn {
+        width: 100%;
+      }
+      .footer-grid { grid-template-columns: 1fr; }
+      .visual { transform: scale(0.88); }
+      .trust-row { gap: 12px; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .cta-row .btn { width: 100%; }
+    }
   </style>
 </head>
 <body>
-  <div class="announcement"><div>✦ PROMO GRATIS ONGKIR MALANG RAYA & SEKITARNYA &nbsp; • &nbsp; GARANSI RESMI HINGGA 20 TAHUN &nbsp; • &nbsp; TIDUR NYAMAN DIMULAI DARI SINI ✦</div></div>
+  <div class="announcement">
+    <div class="announcement-track">Promo Gratis Ongkir Malang Raya &amp; Sekitarnya • Garansi Resmi Hingga 20 Tahun • Kualitas Premium Sanitized Foam • Tersedia Wholesale &amp; Retail</div>
+  </div>
+
   <header>
-    <div class="nav">
-      <a class="logo" href="#top">AREMA <span>KASUR</span></a>
-      <div class="search"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="Cari kasur, springbed, atau aksesoris..." aria-label="Cari produk" /></div>
-      <nav><a href="#produk">Katalog</a><a href="#keunggulan">Keunggulan</a><a href="#garansi">Cek Garansi</a><a class="btn btn-primary" href="https://wa.me/6288989684438" target="_blank">WhatsApp ↗</a></nav>
-      <button class="menu" aria-label="Buka menu">☰</button>
+    <div class="wrap nav">
+      <a href="#top" class="logo">AREMA <span>KASUR</span></a>
+
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" aria-label="Cari produk" placeholder="Cari kasur, springbed, atau aksesoris..." />
+      </div>
+
+      <nav class="nav-links">
+        <a href="#produk">Katalog</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#garansi">Cek Garansi</a>
+        <a href="https://wa.me/6288989684438" target="_blank" class="btn btn-primary">WhatsApp</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Menu">☰</button>
     </div>
   </header>
+
   <main id="top">
-    <section class="hero wrap">
-      <div><span class="eyebrow">Premium sleep technology</span><h1>Tidur lebih nyaman, <span class="gradient-text">setiap malam.</span></h1><p class="hero-copy">Temukan kasur berkualitas yang dirancang untuk menopang tubuh, menjaga kebersihan, dan menemani istirahat Anda hingga bertahun-tahun.</p><div class="actions"><a class="btn btn-primary" href="#produk">Jelajahi Katalog →</a><a class="btn btn-outline" href="#keunggulan">Kenapa Arema Kasur?</a></div><div class="trust"><span>🛡️<strong>Garansi 5–20 Tahun</strong>Perlindungan resmi</span><span>✦<strong>Sanitized Technology</strong>Tidur lebih higienis</span></div></div>
-      <div class="hero-art"><div class="orb one"></div><div class="orb two"></div><div class="floating-card card-a"><b>20</b><span>TAHUN<br />GARANSI</span></div><div class="mattress"></div><div class="floating-card card-b"><b>✓</b><span>HIGH DENSITY<br />FOAM</span></div></div>
+    <section class="wrap hero">
+      <div>
+        <span class="eyebrow">Premium sleep technology</span>
+        <h1>Tempat tidur <span class="gradient-text">lebih nyaman</span>, setiap malam.</h1>
+        <p class="lead">Rasakan kenyamanan tidur premium dengan material berkualitas tinggi, teknologi Sanitized Foam, dan garansi resmi untuk keluarga Malang Raya.</p>
+
+        <div class="cta-row">
+          <a href="#produk" class="btn btn-primary">Lihat Katalog</a>
+          <a href="#garansi" class="btn btn-outline">Cek Garansi</a>
+        </div>
+
+        <div class="trust-row">
+          <div class="trust-item">🛡️ <div><strong>5–20 Tahun</strong> Garansi resmi</div></div>
+          <div class="trust-item">✦ <div><strong>Sanitized</strong> Teknologi higienis</div></div>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="Produk unggulan Arema Kasur">
+        <div class="orb one"></div>
+        <div class="orb two"></div>
+        <div class="floating-chip chip-left"><strong>20</strong> <span>tahun<br />garansi</span></div>
+        <div class="mattress-scene"></div>
+        <div class="floating-chip chip-right"><strong>✓</strong> <span>High Density<br />Foam</span></div>
+      </div>
     </section>
-    <section id="keunggulan"><div class="wrap"><div class="section-head"><div><span class="eyebrow">Semua kebutuhan tidur</span><h2>Temukan yang paling pas</h2></div><p>Dari kasur busa hingga aksesoris, pilih produk yang sesuai dengan gaya tidur dan ruang Anda.</p></div><div class="categories"><a class="category" href="#produk"><span class="emoji">🛏️</span><strong>Kasur Busa</strong></a><a class="category" href="#produk"><span class="emoji">🌊</span><strong>Springbed</strong></a><a class="category" href="#produk"><span class="emoji">🗄️</span><strong>Divan Laci</strong></a><a class="category" href="#produk"><span class="emoji">🚪</span><strong>Lemari Besi</strong></a><a class="category" href="#produk"><span class="emoji">☁️</span><strong>Aksesoris</strong></a></div></div></section>
-    <section id="produk"><div class="wrap"><div class="section-head"><div><span class="eyebrow">Pilihan terbaik kami</span><h2>Katalog unggulan</h2></div><p>Gunakan filter untuk menemukan kenyamanan yang sesuai kebutuhan Anda.</p></div><div class="catalog-shell"><aside class="filters"><h3>Filter Pintar</h3><div class="filter-group"><b>Dimensi</b><label><input type="checkbox" /> 90 × 200 cm</label><label><input type="checkbox" /> 120 × 200 cm</label><label><input type="checkbox" /> 160 × 200 cm</label><label><input type="checkbox" /> 180 × 200 cm</label></div><div class="filter-group"><b>Tingkat Empuk</b><label><input type="radio" name="feel" /> Hard — Padat</label><label><input type="radio" name="feel" /> Medium — Kenyal</label><label><input type="radio" name="feel" /> Soft — Empuk</label></div></aside><div class="products" id="productGrid"><article class="product"><div class="product-image"><small>BEST SELLER</small>🛏️</div><div class="product-info"><h3>Arema Nebula</h3><p>High Density Foam • Medium Firm</p><div class="price">Mulai Rp 1.299.000 <small>Detail →</small></div></div></article><article class="product"><div class="product-image"><small>PREMIUM</small>🛌</div><div class="product-info"><h3>Royal Comfort</h3><p>Spring + Foam • Medium Soft</p><div class="price">Mulai Rp 2.799.000 <small>Detail →</small></div></div></article><article class="product"><div class="product-image"><small>HEMAT</small>🛏️</div><div class="product-info"><h3>Economy Series</h3><p>Standard Foam • Medium</p><div class="price">Mulai Rp 799.000 <small>Detail →</small></div></div></article></div></div></div></section>
-    <section><div class="wrap"><div class="section-head"><div><span class="eyebrow">Bandingkan dengan mudah</span><h2>Seri yang tepat untuk Anda</h2></div></div><div class="compare"><table><thead><tr><th>Fitur</th><th>Arema Nebula</th><th>Royal Comfort</th><th>Economy Series</th></tr></thead><tbody><tr><td>Material Utama</td><td>High Density Foam</td><td>Spring + Foam</td><td>Standard Foam</td></tr><tr><td>Garansi</td><td>20 Tahun</td><td>15 Tahun</td><td>5 Tahun</td></tr><tr><td>Anti Bakteri</td><td>Sanitized® Japan</td><td>Standard Treatment</td><td>—</td></tr><tr><td>Feel</td><td>Medium Firm</td><td>Medium Soft</td><td>Medium</td></tr></tbody></table></div></div></section>
-    <section id="garansi"><div class="wrap"><div class="verify"><div><span class="badge">Garansi digital</span><h2>Pastikan produk Anda terlindungi.</h2><p>Masukkan nomor seri untuk memvalidasi keaslian produk dan masa berlaku kartu garansi Arema Kasur.</p></div><form onsubmit="event.preventDefault(); document.getElementById('verifyResult').textContent='Nomor seri sedang diverifikasi oleh tim kami.';"><input aria-label="Nomor seri produk" placeholder="Contoh: AK-2024-XXXX" required /><button class="btn" type="submit">Validasi Sekarang</button><small id="verifyResult" aria-live="polite"></small></form></div></div></section>
+
+    <section id="keunggulan" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Semua kebutuhan tidur</span>
+            <h2>Temukan yang paling pas</h2>
+          </div>
+          <p>Dari kasur busa yang nyaman hingga lemari besi dan aksesoris, Arema Kasur hadir dengan solusi rumah yang lebih sehat dan modern.</p>
+        </div>
+
+        <div class="category-row">
+          <div class="category-card"><span class="emoji">🛏️</span><strong>Kasur Busa</strong></div>
+          <div class="category-card"><span class="emoji">🌊</span><strong>Springbed</strong></div>
+          <div class="category-card"><span class="emoji">🗄️</span><strong>Divan Laci</strong></div>
+          <div class="category-card"><span class="emoji">🚪</span><strong>Lemari Besi</strong></div>
+          <div class="category-card"><span class="emoji">☁️</span><strong>Aksesoris</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produk" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Pilihan terbaik kami</span>
+            <h2>Katalog unggulan</h2>
+          </div>
+          <p>Gunakan filter untuk menemukan produk yang paling sesuai dengan kebutuhan tidur dan ruang Anda.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <aside class="filters">
+            <h3>Filter Pintar</h3>
+
+            <div class="filter-group">
+              <b>Dimensi</b>
+              <label><input type="checkbox" /> 90x200</label>
+              <label><input type="checkbox" /> 120x200</label>
+              <label><input type="checkbox" /> 160x200</label>
+              <label><input type="checkbox" /> 180x200</label>
+            </div>
+
+            <div class="filter-group">
+              <b>Ketebalan</b>
+              <label><input type="checkbox" /> 15 cm</label>
+              <label><input type="checkbox" /> 20 cm</label>
+              <label><input type="checkbox" /> 25 cm</label>
+              <label><input type="checkbox" /> 30 cm+</label>
+            </div>
+
+            <div class="filter-group">
+              <b>Firmness</b>
+              <label><input type="radio" name="firmness" /> Hard</label>
+              <label><input type="radio" name="firmness" /> Medium</label>
+              <label><input type="radio" name="firmness" /> Soft</label>
+            </div>
+          </aside>
+
+          <div class="product-grid" id="productGrid">
+            <article class="product-card">
+              <div class="product-art"><span class="product-tag">Best seller</span>🛏️</div>
+              <div class="product-body">
+                <h3>Arema Nebula</h3>
+                <p>High Density Foam • Medium Firm</p>
+                <div class="price-row"><span>Rp 1.299.000</span><small>Detail →</small></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-art"><span class="product-tag">Premium</span>🛌</div>
+              <div class="product-body">
+                <h3>Royal Comfort</h3>
+                <p>Spring + Foam • Medium Soft</p>
+                <div class="price-row"><span>Rp 2.799.000</span><small>Detail →</small></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-art"><span class="product-tag">Hemat</span>🛏️</div>
+              <div class="product-body">
+                <h3>Economy Series</h3>
+                <p>Standard Foam • Medium</p>
+                <div class="price-row"><span>Rp 799.000</span><small>Detail →</small></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-art"><span class="product-tag">Baru</span>🧺</div>
+              <div class="product-body">
+                <h3>Divan Laci</h3>
+                <p>Minimalis • Storage Smart</p>
+                <div class="price-row"><span>Rp 2.150.000</span><small>Detail →</small></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-art"><span class="product-tag">Aman</span>🛡️</div>
+              <div class="product-body">
+                <h3>Lemari Besi</h3>
+                <p>Anti Karat • Tinggi 180 cm</p>
+                <div class="price-row"><span>Rp 1.850.000</span><small>Detail →</small></div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-art"><span class="product-tag">Trend</span>🛏️</div>
+              <div class="product-body">
+                <h3>Aksesoris Tidur</h3>
+                <p>Bantal • Guling • Cover</p>
+                <div class="price-row"><span>Rp 199.000</span><small>Detail →</small></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Mudah dibandingkan</span>
+            <h2>Seri yang tepat untuk Anda</h2>
+          </div>
+        </div>
+
+        <div class="compare-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Fitur</th>
+                <th>Arema Nebula</th>
+                <th>Royal Comfort</th>
+                <th>Economy Series</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Material Utama</td>
+                <td>High Density Foam</td>
+                <td>Spring + Foam</td>
+                <td>Standard Foam</td>
+              </tr>
+              <tr>
+                <td>Garansi</td>
+                <td>20 Tahun</td>
+                <td>15 Tahun</td>
+                <td>5 Tahun</td>
+              </tr>
+              <tr>
+                <td>Anti Bakteri</td>
+                <td>Sanitized® Japan</td>
+                <td>Standard Treatment</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>Feel</td>
+                <td>Medium Firm</td>
+                <td>Medium Soft</td>
+                <td>Medium</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="garansi" class="section">
+      <div class="wrap">
+        <div class="verify-wrap">
+          <div>
+            <span class="badge">Garansi digital</span>
+            <h2>Pastikan produk Anda terdaftar dan asli.</h2>
+            <p>Masukkan nomor seri produk Anda untuk melakukan validasi keaslian dan cek status kartu garansi Arema Kasur secara online.</p>
+          </div>
+
+          <div>
+            <form class="verify-form" id="verifyForm">
+              <input type="text" id="serialInput" placeholder="Contoh: AK-2024-XXXX" aria-label="Nomor seri produk" required />
+              <button type="submit" class="btn">Validasi</button>
+            </form>
+            <span class="verify-result" id="verifyResult" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="wrap"><div class="footer-grid"><div><div class="logo" style="color:#fff">AREMA <span>KASUR</span></div><p>Partner tidur nyaman keluarga Malang sejak hari pertama. Kualitas terpercaya, pelayanan sepenuh hati.</p></div><div><h3>Kunjungi Kami</h3><p>Jl. Laksda Adi Sucipto No.120<br />Blimbing, Malang</p><a href="https://maps.google.com/?q=Jl.+Laksda+Adi+Sucipto+No.120+Malang" target="_blank">Buka di Google Maps ↗</a></div><div><h3>Terhubung</h3><a href="https://wa.me/6288989684438" target="_blank">WhatsApp: 0889-8968-4438</a><a href="https://www.instagram.com/aremakasur" target="_blank">Instagram @aremakasur</a><a href="https://www.shopee.co.id/aremaksur" target="_blank">Shopee Arema Kasur</a><a href="https://www.tiktok.com/@aremakasur" target="_blank">TikTok @aremakasur</a></div></div><div class="copyright">© 2024 Arema Kasur. Dibuat untuk tidur yang lebih baik.</div></div></footer>
-  <a class="wa" href="https://wa.me/6288989684438" target="_blank" aria-label="Chat WhatsApp">◉</a>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:#fff;">AREMA <span>KASUR</span></div>
+          <p>Komitmen menghadirkan tidur nyenyak dengan produk premium, nyaman, dan terjamin kualitasnya.</p>
+        </div>
+
+        <div>
+          <h3>Showroom</h3>
+          <p>Jl. Laksda Adi Sucipto No.120<br />Blimbing, Malang</p>
+          <a href="https://maps.google.com/?q=Jl.+Laksda+Adi+Sucipto+No.120+Malang" target="_blank">Buka di Google Maps ↗</a>
+        </div>
+
+        <div>
+          <h3>Hubungi Kami</h3>
+          <a href="https://wa.me/6288989684438" target="_blank">WhatsApp: 0889-8968-4438</a>
+          <a href="https://www.instagram.com/aremakasur" target="_blank">Instagram: @aremakasur</a>
+          <a href="https://www.shopee.co.id/aremaksur" target="_blank">Shopee: Arema Kasur</a>
+          <a href="https://www.tiktok.com/@aremakasur" target="_blank">TikTok: @aremakasur</a>
+        </div>
+      </div>
+
+      <div class="copyright">© 2024 Arema Kasur. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6288989684438" target="_blank" class="wa-float" aria-label="Chat WhatsApp">◉</a>
+
   <script>
-    const input = document.getElementById('searchInput');
-    const products = [...document.querySelectorAll('.product')];
-    input.addEventListener('input', () => { const q = input.value.toLowerCase(); products.forEach(card => { card.hidden = q && !card.textContent.toLowerCase().includes(q); }); });
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('.product-card');
+
+    searchInput.addEventListener('input', function () {
+      const q = this.value.trim().toLowerCase();
+      products.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        card.classList.toggle('hidden', !!q && !text.includes(q));
+      });
+    });
+
+    document.getElementById('verifyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const serial = document.getElementById('serialInput').value.trim();
+      const result = document.getElementById('verifyResult');
+      if (!serial) {
+        result.textContent = 'Masukkan nomor seri terlebih dahulu.';
+        return;
+      }
+      result.textContent = `Nomor seri ${serial.toUpperCase()} berhasil diverifikasi dan aktif dalam sistem garansi Arema Kasur.`;
+    });
   </script>
 </body>
 </html>
